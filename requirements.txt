@@ -1,0 +1,17 @@
+# The one environment: the versions the paper's RL runs were produced with. Evaluation and the cue
+# search need only vllm, transformers and math-verify from this list; the RL trainer pins TRL tightly
+# because it patches GRPOTrainer internals (cues/rl/patches.py). vLLM >= 0.26 is required for Olmo-3:
+# older versions apply YaRN to every layer and inflate base accuracy.
+torch==2.11.0
+vllm==0.26.0
+transformers==5.15.0
+trl==1.10.0
+peft==0.20.0
+accelerate==1.14.0
+liger_kernel==0.8.1
+math-verify==0.9.0
+datasets==5.0.1
+huggingface_hub>=1.0
+numpy>=2.0
+# optional, only for --zero3 (Olmo-3-32B):
+# deepspeed==0.18.9

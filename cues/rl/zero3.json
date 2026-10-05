@@ -1,0 +1,14 @@
+{
+  "bf16": {"enabled": true},
+  "zero_optimization": {
+    "stage": 3,
+    "overlap_comm": true,
+    "contiguous_gradients": true,
+    "stage3_gather_16bit_weights_on_model_save": true
+  },
+  "gradient_clipping": "auto",
+  "train_micro_batch_size_per_gpu": "auto",
+  "gradient_accumulation_steps": "auto",
+  "steps_per_print": 1000000,
+  "wall_clock_breakdown": false
+}

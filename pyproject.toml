@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "token-cues"
+version = "0.1.0"
+description = "Evaluate, discover and RL-train the opening cues of base language models (Base Models Can Reason by Taking a Cue from Training Data)."
+requires-python = ">=3.11"
+dependencies = [
+    "torch==2.11.0",
+    "vllm==0.26.0",
+    "transformers==5.15.0",
+    "trl==1.10.0",
+    "peft==0.20.0",
+    "accelerate==1.14.0",
+    "liger_kernel==0.8.1",
+    "math-verify==0.9.0",
+    "datasets==5.0.1",
+    "huggingface_hub>=1.0",
+    "numpy>=2.0",
+]
+
+[project.optional-dependencies]
+rl32b = ["deepspeed==0.18.9"]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+include = ["cues*"]
